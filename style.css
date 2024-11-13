@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    direction: rtl;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.view-toggle i {
+    font-size: 26px;
+    margin-left: 12px;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.view-toggle i.active {
+    color: #007bff;
+    border: 2px solid #007bff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.gallery-wrapper {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#gallery.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 18px;
+    width: 100%;
+}
+
+#gallery.single-view img {
+    width: 100%;
+    display: block;
+    margin-bottom: 18px;
+}
+
+#gallery img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    padding: 4px;
+}
+
+#gallery img:hover {
+    transform: scale(1.06);
+}
+
+
+/* پنهان کردن دکمه نمایش تکی در گوشی */
+@media (max-width: 768px) {
+    #singleViewIcon {
+        display: none;
+    }
+}
+
+/* نمایش دکمه نمایش تکی فقط برای تبلت و دستگاه‌های بزرگتر */
+@media (min-width: 768px) {
+    #singleViewIcon {
+        display: inline-block;
+    }
+}
